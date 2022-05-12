@@ -1,0 +1,26 @@
+#### todo_tool section: ####
+
+DATA_FILE=/home/us/todo
+
+# today task:
+alias tod='grep -n "^0:" $DATA_FILE | cut -d':' -f1,3,4'
+# nextday task:
+alias tom='grep -n "^1:" $DATA_FILE | cut -d':' -f1,3,4'
+# later task:
+alias lat='grep -n "^!:" $DATA_FILE | cut -d':' -f1,3,4'
+# done task:
+alias don='grep -n "^x:" $DATA_FILE | cut -d':' -f1,3,4'
+# dated task:
+alias dat='grep -n "^[0-9][0-9]-[0-9][0-9]:\|\
+[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]:" $DATA_FILE'
+
+function del()
+{
+	if [ "$1" = "" ]; then
+		echo "error: no task number";
+		return 1;
+	fi
+	sed -i "$1d" $DATA_FILE
+}
+
+#### end of todo_tool section: ####
