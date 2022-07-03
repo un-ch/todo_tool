@@ -8,8 +8,6 @@ alias tod='grep -n "^0:" $DATA_FILE | cut -d':' -f1,3,4'
 alias tom='grep -n "^1:" $DATA_FILE | cut -d':' -f1,3,4'
 # later task:
 alias lat='grep -n "^!:" $DATA_FILE | cut -d':' -f1,3,4'
-# done task:
-alias don='grep -n "^x:" $DATA_FILE | cut -d':' -f1,3,4'
 # dated task:
 alias dat='grep -n "^[0-9][0-9]-[0-9][0-9]:\|\
 [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]:" $DATA_FILE'
