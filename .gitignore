@@ -1,0 +1,10 @@
+# The gitignore file specifies intentionally untracked files that Git
+# should ignore.
+#
+*
+# except this files:
+!.gitignore
+!Makefile
+!README.md
+!addition_to_bashrc_file!
+!dealing_with_todo_tasks.sh
