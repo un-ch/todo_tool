@@ -21,4 +21,14 @@ function del()
 	sed -i "$1d" $DATA_FILE
 }
 
+# done task:
+function don()
+{
+	if [ "$1" = "" ]; then
+		grep -n "^x:" $DATA_FILE | cut -d':' -f1,3,4
+		return 1;
+	fi
+	sed -i "$1s/^0:/x:/" $DATA_FILE
+}
+
 #### end of todo_tool section: ####
